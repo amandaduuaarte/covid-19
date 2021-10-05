@@ -1,23 +1,25 @@
-import logo from './logo.svg';
+import { useEffect, useState,} from 'react';
 import './App.css';
+import api from './services/api';
 
 function App() {
+  const [brasil, setCountry] = useState();
+
+  useEffect(() => {
+    api 
+    .get("/cases?country=Brazil")
+    .then((response) => setCountry(response.data))
+    .catch((err) =>{
+      console.error("deu merda oh" + err);
+    })
+  });
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
+      <h1> Teste </h1>
+        <p> País: {brasil?.All?.country}</p>
+        <p> 
+       Casos confirmados: {brasil?.All?.confirmed}
         </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
     </div>
   );
 }
