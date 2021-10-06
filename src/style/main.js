@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import {Background, TitleColor,InfoColor} from './colors';
+import {Background, TitleColor,InfoColor,SubInfoColor,} from './colors';
 import "../App.css";
 
 export const Title = styled.h1`
@@ -19,14 +19,20 @@ export const Body = styled.div`
 `;
 export const Main = styled.div`
   display:flex;
-  flex-direction:row-reverse;
-  height:70vh;
+  height:60vh;
   width:75vw;
+  flex-direction:row-reverse;
   justify-content:space-between;
 `;
-export const Info = styled.p`
+export const SubInfo = styled.p`
   font-size: 1.8em;
-  margin-right:2%;
+  font-family: 'Patua One', cursive;
+  flex-direction:column;
+  color: ${SubInfoColor};
+`;
+export const Info = styled.p`
+  font-size: 1.3em;
+  font-family: 'Patua One', cursive;
   flex-direction:column;
   color: ${InfoColor};
 

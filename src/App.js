@@ -1,8 +1,9 @@
 import { useEffect, useState,} from 'react';
 import './App.css';
-import {Title, Body,Info, Img, Main} from './style/main';
-import Imagem from './images/DrawKit Vector Illustration - COVID-19 & Vaccinations V1.0/PNG/06.png';
+import {Title, Body,Info, Img, Main,SubInfo} from './style/main';
 import api from './services/api';
+import Card from './components/cards';
+import Imagem from './images/DrawKit Vector Illustration - COVID-19 & Vaccinations V1.0/PNG/06.png';
 
 function App() {
   
@@ -24,18 +25,20 @@ function App() {
         <Info> 
         País: {brasil?.All?.country}
         </Info>
+        <Info>
+        Capital : {brasil?.All?.capital_city}
+         </Info>
+         <Info>
+        Expectativa de vida do país: {brasil?.All?.life_expectancy} anos
+        </Info>
+        <SubInfo> Informações sobre a covid-19 no país: </SubInfo>
         <Info>Casos confirmados: {brasil?.All?.confirmed}</Info>
         <Info>
         Número de mortes: {brasil?.All?.deaths} 
         </Info>
-        <Info>
-        Expectativa de vida: {brasil?.All?.life_expectancy} anos
-        </Info>
-        <Info>
-        Capital : {brasil?.All?.capital_city}
-         </Info>
          </div>
         </Main>
+        <Card></Card>
     </Body>
   );
 }
