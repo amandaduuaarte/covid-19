@@ -1,6 +1,5 @@
 import {useState, useEffect} from 'react';
-import {Body, Content,States} from './cardsStyle';
-import {Info} from '../style/main';
+import {Body, Content,States} from './componentsStyle';
 import api from '../services/api';
 import apiNames from '../services/apiNames';
 
