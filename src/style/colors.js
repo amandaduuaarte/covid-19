@@ -1,5 +1,5 @@
 //Cores usadas
-export const Background = `rgb(255, 255, 255)`;
+export const Background = `rgb(244, 241, 222)`;
 export const BackgroundMain = `rgb(181, 228, 140)`;
 export const TitleColor = `rgb(82, 182, 154)`;
 export const InfoColor = `rgb(30, 96, 145)`;

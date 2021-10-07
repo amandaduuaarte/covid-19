@@ -1,5 +1,5 @@
 import {useState, useEffect} from 'react';
-import {Body, Content,States} from './componentsStyle';
+import {Body, Content,States,Main} from './componentsStyle';
 import api from '../services/api';
 import apiNames from '../services/apiNames';
 
@@ -23,7 +23,7 @@ function Card (){
 
   // })
   return (
-    <div>
+    <Main>
       {/* Deu certo maass ele esta fazendo diversas vezes a requisição ai travou
        <ul> 
         {Object.keys(setLocal).map((setLocal)=>
@@ -33,22 +33,25 @@ function Card (){
       <States>Informações sobre os estados:</States>
     <Body>
     <Content>
+    <p> Acre </p>
       <p> Casos confirmados:{state?.Acre.confirmed}</p>
       <p>Número de mortes: {state?.Acre.deaths}</p>
       <p> Atualizado: {state?.Acre.updated}</p>
     </Content>
     <Content>
+    <p> Ceará </p>
       <p> Casos confirmados:{state?.Ceara.confirmed}</p>
       <p>Número de mortes: {state?.Ceara.deaths}</p>
       <p> Atualizado: {state?.Ceara.updated}</p>
     </Content>
     <Content>
+      <p> Ceará </p>
       <p> Casos confirmados:{state?.Ceara.confirmed}</p>
       <p>Número de mortes: {state?.Ceara.deaths}</p>
       <p> Atualizado: {state?.Ceara.updated}</p>
     </Content>
     </Body>
-    </div>
+    </Main>
   )
 }
 export default Card;

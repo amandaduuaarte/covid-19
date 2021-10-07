@@ -3,15 +3,16 @@ import {Background, TitleColor,InfoColor,SubInfoColor,} from './colors';
 import "../App.css";
 
 export const Title = styled.h1`
+  align-self:flex-start;
   font-family: 'Patua One', cursive;
-  font-size: 2.5em;
+  font-size: 2em;
   color:${TitleColor};
-  margin: 2% 0 2% 0;
+  margin: 2% 0 5% 10%;
 `;
 export const Body = styled.div`
   display:flex;
-  height: 100vh;
-  width: 100vw;
+  height: 100%;
+  width: 100%;
   flex-direction: column;
   justify-content:flex-start;
   align-items:center;
@@ -25,7 +26,7 @@ export const Main = styled.div`
   justify-content:space-between;
 `;
 export const SubInfo = styled.p`
-  font-size: 1.8em;
+  font-size: 2em;
   font-family: 'Patua One', cursive;
   flex-direction:column;
   color: ${SubInfoColor};
@@ -38,6 +39,6 @@ export const Info = styled.p`
 
 `;
 export const Img = styled.img`
-  height:80%;
+  height:90%;
   width:40%;
 `;

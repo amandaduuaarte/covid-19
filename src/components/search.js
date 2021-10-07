@@ -1,4 +1,5 @@
 import {useState, useEffect} from 'react';
+import {SearchDiv, SearchInput,Button, } from './componentsStyle';
 import api from '../services/api';
 
 function Search (){
@@ -19,13 +20,15 @@ function Search (){
       // });
     })
   return(
-    <div>
-      <input type="text" 
+    <SearchDiv>
+      <SearchInput placeholder="Estado"/>
+      <Button>Pesquisar </Button>
+      {/* <input type="text" 
       value={search}
       onChange={(ev)=> setSearch(ev.target.value)}
-      />
+      /> */}
        {/* <p> Casos confirmados:{state?.searchFilter.confirmed}</p>  */}
-    </div>
+    </SearchDiv>
   )
 }
 
