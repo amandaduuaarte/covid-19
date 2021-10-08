@@ -17,15 +17,24 @@ export const Content = styled.div`
   display:flex;
   height:220px;
   width:300px;
-  flex-direction:row;
+  flex-direction:column;
   flex-wrap:wrap;
-  justify-content:center;
-  border-radius:5%;
+  justify-content:space-between;
   margin-right:4%;
-  border: 1px solid red;
+  box-shadow: 10px 5px 5px rgb(206, 212, 218);
   background-color:rgb(255,255,255);
+  
+`;
+export const CardText = styled.p`
   color:black;
+  font-size:1.1em;
+  margin-left:10px;
   font-family: 'Patua One', cursive;
+`;
+export const Details = styled.div`
+  height:40px;
+  width:100%;
+  background-color:${SubInfoColor};
 `;
 export const States = styled.p`
   font-size:1.8em;

@@ -1,9 +1,12 @@
 import {useState, useEffect} from 'react';
-import {Body, Content,States,Main} from './componentsStyle';
+import { TitleColor} from '../style/colors';
+import {Body, Content,States,Main, CardText,Details} from './componentsStyle';
 import api from '../services/api';
-import apiNames from '../services/apiNames';
 
 function Card (){
+  let style={
+    backgroundColor:TitleColor,
+  }
   const [state, setLocal, setNm, name] = useState();
   useEffect(()=>{
     api
@@ -33,22 +36,32 @@ function Card (){
       <States>Informações sobre os estados:</States>
     <Body>
     <Content>
-    <p> Acre </p>
-      <p> Casos confirmados:{state?.Acre.confirmed}</p>
-      <p>Número de mortes: {state?.Acre.deaths}</p>
-      <p> Atualizado: {state?.Acre.updated}</p>
+    <Details/>
+    <CardText> Acre </CardText>
+      <CardText> Casos confirmados:{state?.Acre.confirmed}</CardText>
+      <CardText>Número de mortes: {state?.Acre.deaths}</CardText>
+      <CardText> Atualizado: {state?.Acre.updated}</CardText>
     </Content>
     <Content>
-    <p> Ceará </p>
-      <p> Casos confirmados:{state?.Ceara.confirmed}</p>
-      <p>Número de mortes: {state?.Ceara.deaths}</p>
-      <p> Atualizado: {state?.Ceara.updated}</p>
+    <Details style={style}/>
+    <CardText> Ceará </CardText>
+      <CardText> Casos confirmados:{state?.Ceara.confirmed}</CardText>
+      <CardText>Número de mortes: {state?.Ceara.deaths}</CardText>
+      <CardText> Atualizado: {state?.Ceara.updated}</CardText>
     </Content>
     <Content>
-      <p> Ceará </p>
-      <p> Casos confirmados:{state?.Ceara.confirmed}</p>
-      <p>Número de mortes: {state?.Ceara.deaths}</p>
-      <p> Atualizado: {state?.Ceara.updated}</p>
+      <Details/>
+      <CardText> Ceará </CardText>
+      <CardText> Casos confirmados:{state?.Ceara.confirmed}</CardText>
+      <CardText>Número de mortes: {state?.Ceara.deaths}</CardText>
+      <CardText> Atualizado: {state?.Ceara.updated}</CardText>
+    </Content>
+    <Content>
+    <Details style={style}/>
+    <CardText> Ceará </CardText>
+      <CardText> Casos confirmados:{state?.Ceara.confirmed}</CardText>
+      <CardText>Número de mortes: {state?.Ceara.deaths}</CardText>
+      <CardText> Atualizado: {state?.Ceara.updated}</CardText>
     </Content>
     </Body>
     </Main>
