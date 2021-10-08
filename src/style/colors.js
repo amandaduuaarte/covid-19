@@ -1,8 +1,10 @@
 //Cores usadas
 export const Background = `rgb(244, 241, 222)`;
 export const BackgroundMain = `rgb(181, 228, 140)`;
-export const TitleColor = `rgb(82, 182, 154)`;
-export const InfoColor = `rgb(30, 96, 145)`;
-export const SubInfoColor = `rgb(35, 61, 77)`;
+export const TitleColor = `rgb(0, 100, 102)`;
+export const InfoColor = `rgb(11, 82, 91)`;
+export const BorderCard = `rgb(0, 100, 102)`;
+export const SubInfoColor = `rgb(62, 31, 71)`;
 export const BorderColor = `rgb(82, 182, 154)`;
+export const FooterColor = `rgb(27, 58, 75)`;
 

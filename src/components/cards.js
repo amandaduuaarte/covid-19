@@ -1,12 +1,8 @@
 import {useState, useEffect} from 'react';
-import { TitleColor} from '../style/colors';
 import {Body, Content,States,Main, CardText,Details} from './componentsStyle';
 import api from '../services/api';
 
 function Card (){
-  let style={
-    backgroundColor:TitleColor,
-  }
   const [state, setLocal, setNm, name] = useState();
   useEffect(()=>{
     api
@@ -43,7 +39,7 @@ function Card (){
       <CardText> Atualizado: {state?.Acre.updated}</CardText>
     </Content>
     <Content>
-    <Details style={style}/>
+    <Details/>
     <CardText> Ceará </CardText>
       <CardText> Casos confirmados:{state?.Ceara.confirmed}</CardText>
       <CardText>Número de mortes: {state?.Ceara.deaths}</CardText>
@@ -57,7 +53,7 @@ function Card (){
       <CardText> Atualizado: {state?.Ceara.updated}</CardText>
     </Content>
     <Content>
-    <Details style={style}/>
+    <Details />
     <CardText> Ceará </CardText>
       <CardText> Casos confirmados:{state?.Ceara.confirmed}</CardText>
       <CardText>Número de mortes: {state?.Ceara.deaths}</CardText>
