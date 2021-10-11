@@ -11,7 +11,7 @@ export const Body = styled.div`
   height:100%;
   width:100%;
   justify-content:center;
-  flex-direction:row;
+  flex-direction:column;
 `;
 export const Content = styled.div`
   display:flex;
@@ -21,7 +21,7 @@ export const Content = styled.div`
   flex-wrap:wrap;
   justify-content:space-between;
   margin-right:4%;
-  box-shadow: 10px 5px 5px rgb(206, 212, 218);
+  box-shadow: 10px 10px 10px rgb(206, 212, 218);
   background-color:rgb(255,255,255);
   
 `;
@@ -97,7 +97,16 @@ export const FinishInfo = styled.p`
 `;
 
 export const FinishInformations = styled.div`
-  height:200px;
+  display:flex;
+  justify-content:center;
+  flex-direction:column;
+  height:250px;
   width:100%;
   background-color:${FooterColor};
+`;
+export const TextFooter = styled.p`
+  font-size:1.3em;
+  margin-left:5%;
+  color:rgb(255,255,255);
+  font-family: 'Patua One', cursive;
 `;

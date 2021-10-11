@@ -1,6 +1,6 @@
 import {useState, useEffect} from 'react';
 import {SearchDiv, SearchInput,Button, } from './componentsStyle';
-import api from '../services/api';
+import apiNames from '../services/apiStates';
 
 function Search (){
   const [state, setLocal,] = useState();
@@ -8,16 +8,12 @@ function Search (){
   // const searchFilter = state.filter((state) => state.startsWith(search));
 
   useEffect(()=>{
-      api
-      .get("/cases?country=Brazil")
-      .then((response)=> setLocal(response.data))
-      .catch((err) =>{
-        console.error("deu merda oh" + err);
-      })
-      // var result = Object.keys(state).map(function(key) {
-      //   return [Number(key), state[key]];
-      //   console.log(result);
-      // });
+    apiNames
+    .get("https://covid19-brazil-api.now.sh/api/report/v1")
+    .then((response)=> setLocal(response.data))
+    .catch((err) =>{
+      console.error("deu merda oh" + err);
+    })
     })
   return(
     <SearchDiv>

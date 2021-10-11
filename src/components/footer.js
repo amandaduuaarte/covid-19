@@ -1,4 +1,4 @@
-import {FooterDiv, FinishInfo, FinishInformations} from './componentsStyle';
+import {FooterDiv, FinishInfo, FinishInformations, TextFooter} from './componentsStyle';
 
 function Footer (){
   let style ={
@@ -10,7 +10,7 @@ function Footer (){
     <FinishInfo> Informações necessárias sobre a covid-19 no Brasil.</FinishInfo>
     </FooterDiv>
     <FinishInformations>
-
+      <TextFooter> Code by: Amanda </TextFooter>
     </FinishInformations>
     </div>
   )
