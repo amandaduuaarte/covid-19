@@ -26,8 +26,9 @@ export const Content = styled.div`
   background-color:rgb(255,255,255);
 `;
 export const Flag = styled.img`
-  height:30px;
-  width:30px;
+  height:45px;
+  width:50px;
+  align-self:center;
 `;
 export const CardText = styled.p`
   color:rgb(62, 31, 71);
@@ -36,7 +37,7 @@ export const CardText = styled.p`
   font-family: 'Patua One', cursive;
 `;
 export const Details = styled.div`
-  height:40px;
+  height:15px;
   width:100%;
   background-color:${BorderCard};
 `;

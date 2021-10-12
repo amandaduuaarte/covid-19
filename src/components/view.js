@@ -1,12 +1,15 @@
 import {useState, useEffect} from 'react';
-import {Body, Content,States,Main, CardText,Details,SearchDiv, SearchInput,Button,} from './componentsStyle';
+import {Body, Content,States,Main, CardText,Details,SearchDiv, 
+  SearchInput,Button,Flag} from './componentsStyle';
 import apiNames from '../services/apiStates';
-
+// Fazer um modal com o search para aparecer 
+// os dados dos países e finalizou
 function View (){
   const [names, setName] = useState('');
   const [state, setLocal,] = useState();
   const [search, setSearch] = useState('');
-
+  const ImgNm = search.toUpperCase();
+  const img = `https://devarthurribeiro.github.io/covid19-brazil-api/static/flags/${ImgNm}.png`;
   function searchButton(){
     apiNames
     .get(`/brazil/uf/${search}`)
@@ -29,13 +32,14 @@ function View (){
       <SearchInput type="text" 
         value={search}
         onChange={(ev)=> setSearch(ev.target.value)}
-        placeholder="Estado"/>
+        placeholder="Países"/>
           <Button onClick={searchButton}>Pesquisar </Button>
     </SearchDiv>
       <States>Informações sobre os estados:</States>
     <Body>
     <Content>
       <Details/>
+      <Flag src={img}/>
       <CardText> 
           Estado: {state?.state}
       </CardText>
@@ -45,7 +49,7 @@ function View (){
       {names.data?.map(states => ( 
       <Content>
         <Details/>
-        {/* <Flag src={img}/> */}
+        <Flag src={`https://devarthurribeiro.github.io/covid19-brazil-api/static/flags/${states.uf}.png`}/>
         <CardText> 
        Estado: {states.state}
        </CardText>
