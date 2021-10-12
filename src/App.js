@@ -2,6 +2,7 @@ import { useEffect, useState,} from 'react';
 import './App.css';
 import {Title, Body,Info, Img, Main,SubInfo} from './style/main';
 import api from './services/api';
+import View from './components/view';
 import Card from './components/cards';
 import Search from './components/search';
 import Footer from './components/footer';
@@ -25,7 +26,7 @@ function App() {
       <Img src={Imagem}/>
       <div>
         <Info> 
-        País: {brasil?.All?.country}
+        País: Brasil
         </Info>
         <Info>
         Capital : {brasil?.All?.capital_city}
@@ -40,8 +41,9 @@ function App() {
         </Info>
          </div>
         </Main>
-        <Search/>
-        <Card/>
+        <View/>
+        {/* <Search/>
+        <Card/> */}
     <Footer/>
     </Body>
   );

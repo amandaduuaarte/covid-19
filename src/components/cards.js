@@ -1,19 +1,21 @@
 import {useState, useEffect} from 'react';
-import {Body, Content,States,Main, CardText,Details} from './componentsStyle';
+import {Body, Content,States,Main, CardText,Details, Flag} from './componentsStyle';
 import apiNames from '../services/apiStates';
 
 function Card (){
-  const [ setNm, name] = useState();
+  const [ img, setImg] = useState('');
   const [names, setName] = useState('');
-    useEffect(()=>{
+   useEffect(()=>{
       apiNames
       .get("https://covid19-brazil-api.now.sh/api/report/v1")
       .then((response)=> setName(response.data))
       .catch((err) =>{
         console.error("deu merda oh" + err);
       })
+      // apiImgs
+      // .get("https://devarthurribeiro.github.io/covid19-brazil-api/static/flags/SP.png")
+      // .then((res)=> setImg(res.data))
       })
-     
   return (
     <Main>
       <States>Informações sobre os estados:</States>
@@ -21,6 +23,7 @@ function Card (){
       {names.data?.map(states => ( 
       <Content>
         <Details/>
+        {/* <Flag src={img}/> */}
         <CardText> 
        Estado: {states.state}
        </CardText>

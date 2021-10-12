@@ -11,7 +11,8 @@ export const Body = styled.div`
   height:100%;
   width:100%;
   justify-content:center;
-  flex-direction:column;
+  flex-wrap:wrap;
+  flex-direction:row;
 `;
 export const Content = styled.div`
   display:flex;
@@ -19,11 +20,14 @@ export const Content = styled.div`
   width:300px;
   flex-direction:column;
   flex-wrap:wrap;
-  justify-content:space-between;
-  margin-right:4%;
+  justify-content:space-around;
+  margin: 0 4% 5% 0;
   box-shadow: 10px 10px 10px rgb(206, 212, 218);
   background-color:rgb(255,255,255);
-  
+`;
+export const Flag = styled.img`
+  height:30px;
+  width:30px;
 `;
 export const CardText = styled.p`
   color:rgb(62, 31, 71);
@@ -50,6 +54,7 @@ export const SearchDiv = styled.div`
   height:90px;
   width:70%;
   border-radius:5px;
+  align-self:center;
   flex-direction:row;
   justify-content:space-between;
   align-items:center;
