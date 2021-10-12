@@ -24,6 +24,10 @@ export const Content = styled.div`
   margin: 0 4% 5% 0;
   box-shadow: 10px 10px 10px rgb(206, 212, 218);
   background-color:rgb(255,255,255);
+  &:hover{
+    height:240px;
+    box-shadow: 15px 15px 15px rgb(206, 212, 218);
+  }
 `;
 export const Flag = styled.img`
   height:45px;
