@@ -2,14 +2,13 @@ import {useState, useEffect} from 'react';
 import {Body, Content,States,Main, CardText,Details,SearchDiv, 
   SearchInput,Button,Flag} from './componentsStyle';
 import apiNames from '../services/apiStates';
-// Fazer um modal com o search para aparecer 
-// os dados dos países e finalizou
+
 function View (){
   const [names, setName] = useState('');
   const [state, setLocal,] = useState();
+  const [showModal, setShowModal] = useState(false);
   const [search, setSearch] = useState('');
-  const ImgNm = search.toUpperCase();
-  const img = `https://devarthurribeiro.github.io/covid19-brazil-api/static/flags/${ImgNm}.png`;
+  const img = `https://devarthurribeiro.github.io/covid19-brazil-api/static/flags/${search.toUpperCase()}.png`;
   function searchButton(){
     apiNames
     .get(`/brazil/uf/${search}`)
@@ -36,6 +35,17 @@ function View (){
           <Button onClick={searchButton}>Pesquisar </Button>
     </SearchDiv>
       <States>Informações sobre os estados:</States>
+      {showModal && (
+        <>
+        <h1> Testando modal</h1>
+        </>
+      )}
+      <button onClick={() => {setShowModal(!showModal)}}> 
+      {showModal
+      ? "Fechar modal"
+      :"Abrir modal"
+      }
+       </button>
     <Body>
     <Content>
       <Details/>
