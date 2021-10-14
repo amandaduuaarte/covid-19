@@ -122,3 +122,10 @@ export const TextFooter = styled.p`
   color:rgb(255,255,255);
   font-family: 'Patua One', cursive;
 `;
+export const ViewModal = styled.div`
+  display:flex;
+  height:200px;
+  width:200px;
+  color:black;
+  background-color:red;
+`;

@@ -1,14 +1,15 @@
 import {useState, useEffect} from 'react';
 import {Body, Content,States,Main, CardText,Details,SearchDiv, 
-  SearchInput,Button,Flag} from './componentsStyle';
+  SearchInput,Button,Flag,} from './componentsStyle';
+import Modal from './modal';
 import apiNames from '../services/apiStates';
 
 function View (){
   const [names, setName] = useState('');
-  const [state, setLocal,] = useState();
+  const [state, setLocal] = useState();
   const [showModal, setShowModal] = useState(false);
   const [search, setSearch] = useState('');
-  const img = `https://devarthurribeiro.github.io/covid19-brazil-api/static/flags/${search.toUpperCase()}.png`;
+  // const img = `https://devarthurribeiro.github.io/covid19-brazil-api/static/flags/${search.toUpperCase()}.png`;
   function searchButton(){
     apiNames
     .get(`/brazil/uf/${search}`)
@@ -32,13 +33,14 @@ function View (){
         value={search}
         onChange={(ev)=> setSearch(ev.target.value)}
         placeholder="Países"/>
-          <Button onClick={searchButton}>Pesquisar </Button>
+          <Button 
+          // onClick={searchButton}
+          onClick={() => {setShowModal(!showModal)}}
+          >Pesquisar </Button>
     </SearchDiv>
       <States>Informações sobre os estados:</States>
       {showModal && (
-        <>
-        <h1> Testando modal</h1>
-        </>
+        <Modal search={search}/>
       )}
       <button onClick={() => {setShowModal(!showModal)}}> 
       {showModal
@@ -49,7 +51,7 @@ function View (){
     <Body>
     <Content>
       <Details/>
-      <Flag src={img}/>
+      {/* <Flag src={img}/> */}
       <CardText> 
           Estado: {state?.state}
       </CardText>
