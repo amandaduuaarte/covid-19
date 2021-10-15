@@ -8,7 +8,7 @@ import Imagem from './images/DrawKit Vector Illustration - COVID-19 & Vaccinatio
 
 function App() {
   const [brasil, setCountry] = useState();
-  const [names, setName] = useState('');
+  const [states, setStates] = useState('');
   useEffect(() => {
     api 
     .get("/cases?country=Brazil")
@@ -20,7 +20,7 @@ function App() {
   useEffect(() => {
     apiNames
     .get("https://covid19-brazil-api.now.sh/api/report/v1")
-    .then((response)=> setName(response.data))
+    .then((response)=> setStates(response.data))
     .catch((err) =>{
       console.error("deu merda oh" + err);
     })
@@ -47,7 +47,7 @@ function App() {
         </Info>
          </div>
         </Main>
-        <View names ={names}/>
+        <View states ={states}/>
     <Footer/>
     </Body>
   );

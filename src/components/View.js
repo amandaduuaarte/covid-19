@@ -4,8 +4,7 @@ import {Body, Content,States,Main, CardText,Details,SearchDiv,
 import Modal from './Modal';
 import apiNames from '../services/apiStates';
 
-
-function View ({names}){
+function View ({states}){
   const [country, setCountry] = useState('');
   const [showModal, setShowModal] = useState(false);
   const [search, setSearch] = useState('');
@@ -31,7 +30,7 @@ function View ({names}){
         <Modal country ={country}/>
       )}
     <Body>
-      {names.data?.map(states => ( 
+      {states.data?.map(states => ( 
       <Content key={states.uid}>
         <Details/>
         <Flag src={`https://devarthurribeiro.github.io/covid19-brazil-api/static/flags/${states.uf}.png`}/>

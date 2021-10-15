@@ -1,8 +1,8 @@
 import {useState,} from 'react';
+import {FaTimes} from 'react-icons/fa';
 import {ViewModal, ModalContent, ModalTitle, 
   CloseModal, CloseButton, ModalInfo} from './componentsStyle';
-import img from '../images/Icons/delete.png';
-  
+ 
 
 const Modal = ({country}) =>{
 const [showModal, setShowModal] = useState(true);
@@ -11,9 +11,8 @@ const [showModal, setShowModal] = useState(true);
 {showModal && (
    <ViewModal>
         <ModalContent>
-      <CloseButton  
-      onClick={() => {setShowModal(!showModal)}}>  <CloseModal src={img}/> 
-      </CloseButton>
+      <FaTimes style={{alignSelf:'flex-end'}} 
+      onClick={() => {setShowModal(!showModal)}}/>  
           <ModalTitle>
             País:
             {country.data?.country}
