@@ -1,13 +1,14 @@
 import { useEffect, useState,} from 'react';
-import './App.css';
 import {Title, Body,Info, Img, Main,SubInfo,} from './style/main';
 import api from './services/api';
-import View from './components/view';
-import Footer from './components/footer';
+import apiNames from './services/apiStates';
+import View from './components/View';
+import Footer from './components/Footer';
 import Imagem from './images/DrawKit Vector Illustration - COVID-19 & Vaccinations V1.0/PNG/08.png';
 
 function App() {
   const [brasil, setCountry] = useState();
+  const [names, setName] = useState('');
   useEffect(() => {
     api 
     .get("/cases?country=Brazil")
@@ -16,6 +17,14 @@ function App() {
       console.error("deu merda oh" + err);
     })
   });
+  useEffect(() => {
+    apiNames
+    .get("https://covid19-brazil-api.now.sh/api/report/v1")
+    .then((response)=> setName(response.data))
+    .catch((err) =>{
+      console.error("deu merda oh" + err);
+    })
+});
   return (
     <Body>
       <Title> Covid-19 </Title>
@@ -38,7 +47,7 @@ function App() {
         </Info>
          </div>
         </Main>
-        <View/>
+        <View names ={names}/>
     <Footer/>
     </Body>
   );

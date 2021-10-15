@@ -1,21 +1,20 @@
-import {useState, useEffect} from 'react';
+import {useState,} from 'react';
 import {Body, Content,States,Main, CardText,Details,SearchDiv, 
   SearchInput,Button,Flag,} from './componentsStyle';
-import Modal from './modal';
+import Modal from './Modal';
 import apiNames from '../services/apiStates';
 
-function View (){
-  const [names, setName] = useState('');
+
+function View ({names}){
+  const [country, setCountry] = useState('');
   const [showModal, setShowModal] = useState(false);
   const [search, setSearch] = useState('');
-   useEffect(()=>{
-      apiNames
-      .get("https://covid19-brazil-api.now.sh/api/report/v1")
-      .then((response)=> setName(response.data))
-      .catch((err) =>{
-        console.error("deu merda oh" + err);
-      })
-      })
+      const searchCountry = () =>{
+          apiNames
+          .get(`https://covid19-brazil-api.vercel.app/api/report/v1/${search}`)
+          .then((response)=> setCountry(response.data))
+            setShowModal(!showModal)
+      }
   return (
     <Main>
     <SearchDiv>
@@ -24,16 +23,16 @@ function View (){
         onChange={(ev)=> setSearch(ev.target.value)}
         placeholder="Países"/>
           <Button 
-          onClick={() => {setShowModal(!showModal)}}
+          onClick={searchCountry}
           >Pesquisar </Button>
     </SearchDiv>
       <States>Informações sobre os estados:</States>
       {showModal && (
-        <Modal search={search}/>
+        <Modal country ={country}/>
       )}
     <Body>
       {names.data?.map(states => ( 
-      <Content>
+      <Content key={states.uid}>
         <Details/>
         <Flag src={`https://devarthurribeiro.github.io/covid19-brazil-api/static/flags/${states.uf}.png`}/>
         <CardText> 
