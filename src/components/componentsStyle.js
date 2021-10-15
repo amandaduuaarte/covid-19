@@ -123,9 +123,52 @@ export const TextFooter = styled.p`
   font-family: 'Patua One', cursive;
 `;
 export const ViewModal = styled.div`
+  display: block; 
+  position: fixed; 
+  z-index: 1; 
+  left: 0;
+  top: 0;
+  width: 100%; 
+  height: 100%; 
+  overflow: auto;
+  background-color: rgb(0,0,0); 
+  background-color: rgba(0,0,0,0.4); 
+`;
+
+export const ModalContent = styled.div`
   display:flex;
-  height:200px;
-  width:200px;
-  color:black;
-  background-color:red;
+  flex-direction: column;
+  justify-content: center;
+  background-color: #fefefe;
+  margin: 15% auto; 
+  padding: 20px;
+  border-top: 10px solid ${TitleColor};
+  width: 40%;
+  height:35%;
+  padding-top:0;
+  border-radius:24px 10px;
+`;
+export const ModalTitle = styled.p`
+  font-family: 'Patua One', cursive;
+  font-size:2em;
+  align-self:center;
+  margin-top:0;
+`;
+export const CloseButton = styled.button`
+  height:10px;
+  width:20px;
+  align-self:flex-end;
+  margin-top:0;
+  border:none;
+  background-color:transparent;
+`;
+export const CloseModal = styled.img`
+  height:20px;
+  width:20px;
+  align-self:flex-end;
+  margin-top:0;
+`;
+export const ModalInfo = styled.p`
+  font-family: 'Patua One', cursive;
+  font-size:1em;
 `;

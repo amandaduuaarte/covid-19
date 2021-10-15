@@ -1,9 +1,11 @@
 import {useState, useEffect} from 'react';
-import {ViewModal} from './componentsStyle';
+import {ViewModal, ModalContent, ModalTitle, 
+  CloseModal, CloseButton, ModalInfo} from './componentsStyle';
 import apiNames  from '../services/apiStates';
-
+import img from '../images/Icons/delete.png';
 const Modal = ({search}) =>{
   const [country, setCountry] = useState('');
+  const [showModal, setShowModal] = useState(true);
 
   useEffect(()=>{
     apiNames
@@ -12,13 +14,23 @@ const Modal = ({search}) =>{
     // console.log(country)
   })
   return(
-  <ViewModal>
-          <p>
-            Nome:{country.data?.country}
-          </p>
-          <p>casos:{country.data?.confirmed}</p>
-          <p> Número de mortes: {country.data?.deaths}</p>
-  </ViewModal>
+    <>
+{showModal && (
+   <ViewModal>
+        <ModalContent>
+      <CloseButton  
+      onClick={() => {setShowModal(!showModal)}}>  <CloseModal src={img}/> 
+      </CloseButton>
+          <ModalTitle>
+            País:
+            {country.data?.country}
+          </ModalTitle>
+          <ModalInfo>Número de casos:{country.data?.confirmed}</ModalInfo>
+          <ModalInfo> Número de mortes: {country.data?.deaths}</ModalInfo>
+        </ModalContent>
+        </ViewModal>
+        )}
+        </>
   )}
 
 export default Modal

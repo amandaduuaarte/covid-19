@@ -40,14 +40,15 @@ function View (){
     </SearchDiv>
       <States>Informações sobre os estados:</States>
       {showModal && (
-        <Modal search={search}/>
+        <Modal search={search}>
+          {/* <button onClick={() => {setShowModal(!showModal)}}> 
+          {showModal
+          ? "Fechar modal"
+          :"Abrir modal"
+          }
+           </button> */}
+        </Modal>
       )}
-      <button onClick={() => {setShowModal(!showModal)}}> 
-      {showModal
-      ? "Fechar modal"
-      :"Abrir modal"
-      }
-       </button>
     <Body>
     <Content>
       <Details/>
