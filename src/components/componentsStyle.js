@@ -1,5 +1,6 @@
 import styled from 'styled-components';
-import {TitleColor, SubInfoColor,InfoColor,FooterColor,BorderCard} from '../style/colors';
+import {TitleColor, SubInfoColor
+  ,FooterColor,BorderCard} from '../style/colors';
 
 export const Main = styled.div`
   display:flex;

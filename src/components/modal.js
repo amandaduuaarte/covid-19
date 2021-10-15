@@ -3,15 +3,15 @@ import {ViewModal, ModalContent, ModalTitle,
   CloseModal, CloseButton, ModalInfo} from './componentsStyle';
 import apiNames  from '../services/apiStates';
 import img from '../images/Icons/delete.png';
-const Modal = ({search}) =>{
+
+  const Modal = ({search}) =>{
   const [country, setCountry] = useState('');
   const [showModal, setShowModal] = useState(true);
 
   useEffect(()=>{
     apiNames
-    .get(`https://covid19-brazil-api.vercel.app/api/report/v1/${search}`)//Aqui ele vai pegar a props la do search;
+    .get(`https://covid19-brazil-api.vercel.app/api/report/v1/${search}`)
     .then((response)=> setCountry(response.data))
-    // console.log(country)
   })
   return(
     <>

@@ -39,8 +39,6 @@ function App() {
          </div>
         </Main>
         <View/>
-        {/* <Search/>
-        <Card/> */}
     <Footer/>
     </Body>
   );
