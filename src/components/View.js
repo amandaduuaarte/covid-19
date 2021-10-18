@@ -1,5 +1,5 @@
 import {useState,} from 'react';
-import {Body, Content,States,Main, CardText,Details,SearchDiv, 
+import {Body, Content,States,Main, CardText,SearchDiv, 
   SearchInput,Button,Flag,} from './componentsStyle';
 import Modal from './Modal';
 import apiNames from '../services/apiStates';
@@ -32,7 +32,6 @@ function View ({states}){
     <Body>
       {states.data?.map(states => ( 
       <Content key={states.uid}>
-        <Details/>
         <Flag src={`https://devarthurribeiro.github.io/covid19-brazil-api/static/flags/${states.uf}.png`}/>
         <CardText> 
        Estado: {states.state}

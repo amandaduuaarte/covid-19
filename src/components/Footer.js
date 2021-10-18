@@ -7,7 +7,7 @@ function Footer (){
   return(
     <div style={style}>
     <FooterDiv>
-    <FinishInfo> Informações necessárias sobre a covid-19 no Brasil.</FinishInfo>
+    <FinishInfo> Informações necessárias sobre a covid-19.</FinishInfo>
     </FooterDiv>
     <FinishInformations>
       <TextFooter> Code by: Amanda </TextFooter>

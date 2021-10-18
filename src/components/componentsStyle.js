@@ -23,6 +23,7 @@ export const Content = styled.div`
   flex-wrap:wrap;
   justify-content:space-around;
   margin: 0 4% 5% 0;
+  border-top: 10px solid ${TitleColor};
   border-radius:24px 4px;
   box-shadow: 10px 10px 10px rgb(206, 212, 218);
   background-color:rgb(255,255,255);
@@ -41,11 +42,6 @@ export const CardText = styled.p`
   font-size:1.1em;
   margin-left:10px;
   font-family: 'Patua One', cursive;
-`;
-export const Details = styled.div`
-  height:15px;
-  width:100%;
-  background-color:${BorderCard};
 `;
 export const States = styled.p`
   font-size:1.8em;
@@ -138,21 +134,32 @@ export const ViewModal = styled.div`
 
 export const ModalContent = styled.div`
   display:flex;
-  flex-direction: column;
+  flex-direction: row;
   justify-content: center;
   background-color: #fefefe;
   margin: 15% auto; 
   padding: 20px;
-  border-top: 10px solid ${TitleColor};
+  
   width: 40%;
-  height:35%;
+  height:300px;
   padding-top:0;
   border-radius:24px 10px;
+`;
+export const ModalFirst = styled.div`
+    display:flex;
+    flex-direction:column;
+    justify-content:space-around;
+    align-items:center;
+    margin-top:8px;
+    border-radius:5px;
+    background-color:${SubInfoColor};
+    color:rgb(255,255,255);
+    height:100%;
+    width:50%;
 `;
 export const ModalTitle = styled.p`
   font-family: 'Patua One', cursive;
   font-size:2em;
-  align-self:center;
   margin-top:0;
 `;
 export const CloseButton = styled.button`
@@ -171,5 +178,5 @@ export const CloseModal = styled.img`
 `;
 export const ModalInfo = styled.p`
   font-family: 'Patua One', cursive;
-  font-size:1em;
+  font-size:1.2em;
 `;
