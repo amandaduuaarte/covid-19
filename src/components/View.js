@@ -20,10 +20,10 @@ function View ({states}){
       <SearchInput type="text" 
         value={search}
         onChange={(ev)=> setSearch(ev.target.value)}
-        placeholder="Países"/>
+        placeholder="Name of the country"/>
           <Button 
           onClick={searchCountry}
-          >Pesquisar </Button>
+          >Search </Button>
     </SearchDiv>
       <States>Informações sobre os estados:</States>
       {showModal && (

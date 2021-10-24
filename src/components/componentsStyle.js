@@ -11,6 +11,7 @@ export const Body = styled.div`
   display:flex;
   height:100%;
   width:100%;
+  align-items:center;
   justify-content:center;
   flex-wrap:wrap;
   flex-direction:row;
@@ -22,7 +23,7 @@ export const Content = styled.div`
   flex-direction:column;
   flex-wrap:wrap;
   justify-content:space-around;
-  margin: 0 4% 5% 0;
+  margin: 0 4% 5% 4%;
   border-top: 10px solid ${TitleColor};
   border-radius:24px 4px;
   box-shadow: 10px 10px 10px rgb(206, 212, 218);

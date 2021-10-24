@@ -14,7 +14,7 @@ export const Body = styled.div`
   height: 100%;
   width: 100%;
   flex-direction: column;
-  justify-content:flex-start;
+  justify-content:center;
   align-items:center;
   background-color:${Background};
 `;
